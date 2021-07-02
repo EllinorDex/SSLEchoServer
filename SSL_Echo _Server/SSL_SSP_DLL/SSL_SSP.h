@@ -1,31 +1,11 @@
-﻿//  SspiExample.h
+//  SspiExample.h
 #include "stdafx.h"
-#include "SSL_SSP.h"
 
-BOOL SendMsg(SOCKET s, PBYTE pBuf, DWORD cbBuf)
-{
-    return true;
-}
-
-BOOL ReceiveMsg(SOCKET s, PBYTE pBuf, DWORD cbBuf, DWORD* pcbRead)
-{
-    return true;
-}
-
-BOOL SendBytes(SOCKET s, PBYTE pBuf, DWORD cbBuf)
-{
-    return true;
-}
-
-BOOL ReceiveBytes(SOCKET s, PBYTE pBuf, DWORD cbBuf, DWORD* pcbRead)
-{
-    return true;
-}
-
-void cleanup()
-{
-
-}
+BOOL SendMsg(SOCKET s, PBYTE pBuf, DWORD cbBuf);
+BOOL ReceiveMsg(SOCKET s, PBYTE pBuf, DWORD cbBuf, DWORD* pcbRead);
+BOOL SendBytes(SOCKET s, PBYTE pBuf, DWORD cbBuf);
+BOOL ReceiveBytes(SOCKET s, PBYTE pBuf, DWORD cbBuf, DWORD* pcbRead);
+void cleanup();
 
 BOOL GenClientContext(
     BYTE* pIn,
@@ -36,11 +16,7 @@ BOOL GenClientContext(
     CHAR* pszTarget,
     CredHandle* hCred,
     struct _SecHandle* hcText
-)
-{
-    return true;
-}
-
+);
 
 BOOL GenServerContext(
     BYTE* pIn,
@@ -49,11 +25,7 @@ BOOL GenServerContext(
     DWORD* pcbOut,
     BOOL* pfDone,
     BOOL  fNewCredential
-)
-{
-    return true;
-}
-
+);
 
 BOOL EncryptThis(
     PBYTE pMessage,
@@ -61,75 +33,40 @@ BOOL EncryptThis(
     BYTE** ppOutput,
     LPDWORD pcbOutput,
     ULONG securityTrailer
-)
-{
-    return true;
-}
-
+);
 
 PBYTE DecryptThis(
     PBYTE achData,
     LPDWORD pcbMessage,
     struct _SecHandle* hCtxt,
     ULONG   cbSecurityTrailer
-)
-{
-    PBYTE q = 0;
-    return q;
-}
+);
 
-BOOL SignThis(
+BOOL
+SignThis(
     PBYTE pMessage,
     ULONG cbMessage,
     BYTE** ppOutput,
     LPDWORD pcbOutput
-)
-{
-    return true;
-}
+);
 
 PBYTE VerifyThis(
     PBYTE pBuffer,
     LPDWORD pcbMessage,
     struct _SecHandle* hCtxt,
     ULONG   cbMaxSignature
-)
-{
-    PBYTE q = 0;
-    return q;
-}
+);
 
-void PrintHexDump(DWORD length, PBYTE buffer)
-{
-
-}
+void PrintHexDump(DWORD length, PBYTE buffer);
 
 BOOL ConnectAuthSocket(
     SOCKET* s,
     CredHandle* hCred,
     struct _SecHandle* hcText
-)
-{
-    return true;
-}
+);
 
-BOOL CloseAuthSocket(SOCKET s)
-{
-    return true;
-}
+BOOL CloseAuthSocket(SOCKET s);
 
-BOOL DoAuthentication(SOCKET s)
-{
-    return true;
-}
+BOOL DoAuthentication(SOCKET s);
 
-void MyHandleError(char* s)
-{
-
-}
-
-
-int main()
-{
-    std::cout << "Hello World!\n";
-}
+void MyHandleError(char* s);
